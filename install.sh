@@ -10,8 +10,12 @@ if [ "$response" = "o" ] || [ "$response" = "O" ]; then
     cp -f alttab.c ~/.config/hypr/configs/
     gcc -o Move_Fluently.out ~/.config/hypr/configs/alttab.c
     echo "Compilation du fichier gcc"
-    echo "Deplacement du fichier 2/2"
-    cp -f Keybinds.conf ~/.config/hypr/configs/
+    cp -f configalttab.c ~/.config/hypr/configs/
+    gcc -o configinstall.out ~/.config/hypr/configs/configalttab.c
+    chmod +x ~/.config/hypr/configs/configinstall.out
+    sudo ~/.config/hypr/configs/configinstall.out
+    sudo rm ~/.config/hypr/configs/configinstall.out
+    echo "Ajout des keybinds 2/2"
 elif [ "$response" = "n" ] || [ "$response" = "N" ]; then
     echo "Action annulée."
 else
